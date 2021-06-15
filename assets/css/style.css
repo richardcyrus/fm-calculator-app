@@ -96,6 +96,7 @@ select {
   --font-size-primary: 2rem;
   --font-size-theme-controls: 0.75rem;
   --font-weight-bold: 700;
+  color-scheme: light dark;
 }
 
 /* 768px */

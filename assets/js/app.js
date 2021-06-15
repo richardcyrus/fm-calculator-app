@@ -1,4 +1,4 @@
-(function () {
+(function (window) {
   "use strict";
 
   let firstNumber = "";
@@ -169,7 +169,6 @@
     updateDisplay: function (value, format = false) {
       if (format) {
         value = new Intl.NumberFormat("en-US", {
-          minimumFractionDigits: 1,
           maximumFractionDigits: 20,
         }).format(value);
       }
@@ -185,15 +184,49 @@
   };
 
   function themeSwitch() {
+    const themes = ["theme-1", "theme-2", "theme-3"];
     const switches = document.querySelectorAll('input[type="radio"]');
     const body = document.querySelector("body");
 
-    const themes = ["theme-1", "theme-2", "theme-3"];
-    const currentTheme = body.classList;
-    document
-      .querySelector(`#${currentTheme}`)
-      .setAttribute("checked", "checked");
+    if(localStorage.getItem('theme')) {
+      const userThemePreference = localStorage.getItem('theme');
+      document
+        .querySelector(`#${userThemePreference}`)
+        .setAttribute("checked", "checked");
+        body.classList.remove(...themes);
+        body.classList.add(userThemePreference);
 
+    } else {
+      // Check prefers-color-scheme for theme.
+      const light = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if(light) {
+        document
+        .querySelector("#theme-2")
+        .setAttribute("checked", "checked");
+        body.classList.remove(...themes);
+        body.classList.add("theme-2");
+      }
+
+      if(dark) {
+        document
+        .querySelector("#theme-3")
+        .setAttribute("checked", "checked");
+        body.classList.remove(...themes);
+        body.classList.add("theme-3");
+      }
+
+      // If no preference set with `prefers-color-scheme`  or stored in
+      // localStorage then use the default in the body tag. This sets
+      // the theme selector position to match.
+      const currentTheme = body.classList;
+      document
+        .querySelector(`#${currentTheme}`)
+        .setAttribute("checked", "checked");
+    }
+
+    // Change the theme when the user uses the theme switcher.
     switches.forEach((item) =>
       item.addEventListener("click", function (e) {
         const theme = e.target.value;
@@ -202,10 +235,11 @@
 
         body.classList.remove(...themes);
         body.classList.add(theme);
+        localStorage.setItem('theme', theme);
       })
     );
   }
 
-  calculator.init();
   themeSwitch();
-})();
+  calculator.init();
+})(window);
