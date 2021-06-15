@@ -28,6 +28,16 @@ Users should be able to:
 
 ### Screenshot
 
+- Theme 1
+  - [Mobile](./design/screenshots/mobile-screenshot-theme-1.jpg)
+  - [Desktop](./design/screenshots/desktop-screenshot-theme-1.jpg)
+- Theme 2
+  - [Mobile](./design/screenshots/mobile-screenshot-theme-2.jpg)
+  - [Desktop](./design/screenshots/desktop-screenshot-theme-2.jpg)
+- Theme 3
+  - [Mobile](./design/screenshots/mobile-screenshot-theme-3.jpg)
+  - [Desktop](./design/screenshots/desktop-screenshot-theme-3.jpg)
+
 #### Reference Images
 
 - Theme 1
