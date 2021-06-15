@@ -246,6 +246,10 @@ body {
     position: absolute;
     width: 0;
 
+    &:focus + label::before {
+      box-shadow: 0 0 0 0.25rem var(--color-equal-key-shadow);
+    }
+
     &:checked + label::before {
       transform: scale(1);
     }

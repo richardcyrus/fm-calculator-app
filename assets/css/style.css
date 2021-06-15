@@ -257,6 +257,10 @@ body {
   position: absolute;
   width: 0;
 }
+.calculator__theme-controls-switch input[type=radio]:focus + label::before {
+  -webkit-box-shadow: 0 0 0 0.25rem var(--color-equal-key-shadow);
+          box-shadow: 0 0 0 0.25rem var(--color-equal-key-shadow);
+}
 .calculator__theme-controls-switch input[type=radio]:checked + label::before {
   -webkit-transform: scale(1);
           transform: scale(1);
