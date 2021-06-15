@@ -167,6 +167,10 @@
      * @param   {Boolean}  format  Should the final display be formatted?
      */
     updateDisplay: function (value, format = false) {
+      if (value === "") {
+        value = 0;
+      }
+
       if (format) {
         value = new Intl.NumberFormat("en-US", {
           maximumFractionDigits: 20,
