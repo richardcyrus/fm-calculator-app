@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator__heading">
+        <h1 class="calculator__title">calc</h1>
+        <div class="calculator__theme-switcher">
+          <h2 class="calculator__theme-switcher-label">Theme</h2>
+          <div class="calculator__theme-controls">
+            <div class="calculator__theme-controls-labels">
+              <label for="theme-1">1</label>
+              <label for="theme-2">2</label>
+              <label for="theme-3">3</label>
+            </div>
+            <div class="calculator__theme-controls-switch">
+              <input type="radio" value="theme-1" name="theme" id="theme-1">
+              <input type="radio" value="theme-2" name="theme" id="theme-2">
+              <input type="radio" value="theme-3" name="theme" id="theme-3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculator__body">
+        <div class="calculator__screen">0</div>
+        <div class="calculator__keypad">
+          <button type="button" value="7" id="button-7" class="button number"><span>7</span></button>
+          <button type="button" value="8" id="button-8" class="button number"><span>8</span></button>
+          <button type="button" value="9" id="button-9" class="button number"><span>9</span></button>
+          <button type="button" value="delete" id="button-delete" class="button operator"><span>DEL</span></button>
+          <button type="button" value="4" id="button-4" class="button number"><span>4</span></button>
+          <button type="button" value="5" id="button-5" class="button number"><span>5</span></button>
+          <button type="button" value="6" id="button-6" class="button number"><span>6</span></button>
+          <button type="button" value="plus" id="button-plus" class="button operator"><span>+</span></button>
+          <button type="button" value="1" id="button-1" class="button number"><span>1</span></button>
+          <button type="button" value="2" id="button-2" class="button number"><span>2</span></button>
+          <button type="button" value="3" id="button-3" class="button number"><span>3</span></button>
+          <button type="button" value="minus" id="button-minus" class="button operator"><span>-</span></button>
+          <button type="button" value="." id="button-decimal" class="button number"><span>.</span></button>
+          <button type="button" value="0" id="button-0" class="button number"><span>0</span></button>
+          <button type="button" value="divide" id="button-divide" class="button operator"><span>/</span></button>
+          <button type="button" value="times" id="button-times" class="button operator"><span>&times;</span></button>
+          <button type="button" value="reset" id="button-reset" class="button operator"><span>RESET</span></button>
+          <button type="button" value="equals" id="button-equals" class="button operator"><span>=</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.richardcyrus.com">Richard Cyrus</a>.
+    </div>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
