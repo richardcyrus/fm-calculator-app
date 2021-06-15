@@ -96,3 +96,84 @@ select {
   color: hsl(228, 45%, 44%);
 }
 /*#endregion*/
+
+:root {
+  --font-family: 'Spartan', sans-serif;
+  --font-size-primary: 2rem;
+  --font-size-calculator-screen: 2rem;
+  --font-size-theme-controls: 0.75rem;
+  --font-size-number-keys: 1.75rem;
+  --font-size-control-keys: 1rem;
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+  :root {
+    --font-size-calculator-screen: 3rem;
+    --font-size-number-keys: 2rem;
+    --font-size-control-keys: 1.25rem;
+  }
+}
+
+.theme-1 {
+  --color-theme-background: #3a4663;
+  --color-theme-controls-background: #242d44;
+  --color-calculator-keypad-background: #242d44;
+  --color-calculator-screen-background: #181f33;
+  --color-control-keys-background: #647198;
+  --color-control-keys-shadow: #414e73;
+  --color-theme-controls-switch: #d03f2f;
+  --color-equal-key-background: #d03f2f;
+  --color-equal-key-shadow: #93261a;
+  --color-equal-key-text: #ffffff;
+  --color-number-key-background: #eae3dc;
+  --color-number-key-shadow: #b3a497;
+  --color-number-key-text: #434a59;
+  --color-control-key-text: #ffffff;
+  --color-control-keys-background-hover: #a2b2e1;
+  --color-theme-controls-switch-hover: #f96b5b;
+  --color-equal-key-background-hover: #f96b5b;
+  --color-number-key-background-hover: #fffffe;
+}
+
+.theme-2 {
+  --color-theme-background: #e6e6e6;
+  --color-theme-controls-background: #d2cdcd;
+  --color-calculator-keypad-background: #d2cdcd;
+  --color-calculator-screen-background: #eeeeee;
+  --color-control-keys-background: #378187;
+  --color-control-keys-shadow: #1b6066;
+  --color-theme-controls-switch: #c85402;
+  --color-equal-key-background: #c85402;
+  --color-equal-key-shadow: #873901;
+  --color-equal-key-text: #ffffff;
+  --color-number-key-background: #e5e4e1;
+  --color-number-key-shadow: #a79e91;
+  --color-number-key-text: #36362c;
+  --color-control-key-text: #ffffff;
+  --color-control-keys-background-hover: #62b5bc;
+  --color-theme-controls-switch-hover: #ff8a38;
+  --color-equal-key-background-hover: #ff8a38;
+  --color-number-key-background-hover: #ffffff;
+}
+
+.theme-3 {
+  --color-theme-background: #17062a;
+  --color-theme-controls-background: #1e0936;
+  --color-calculator-keypad-background: #1e0936;
+  --color-calculator-screen-background: #1e0936;
+  --color-control-keys-background: #56077c;
+  --color-control-keys-shadow: #be15f4;
+  --color-theme-controls-switch: #00ded0;
+  --color-equal-key-background: #00ded0;
+  --color-equal-key-shadow: #6cf9f1;
+  --color-equal-key-text: #1a2327;
+  --color-number-key-background: #331c4d;
+  --color-number-key-shadow: #881c9e;
+  --color-number-key-text: #ffe53d;
+  --color-control-key-text: #ffffff;
+  --color-control-keys-background-hover: #8631af;
+  --color-theme-controls-switch-hover: #93fff8;
+  --color-equal-key-background-hover: #93fff8;
+  --color-number-key-background-hover: #6c34ac;
+}
