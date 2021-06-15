@@ -115,7 +115,7 @@
           result = this.firstOperand + this.secondOperand;
           break;
         case "minus":
-          result = this.firstOperand + this.secondOperand;
+          result = this.firstOperand - this.secondOperand;
           break;
         case "times":
           result = this.firstOperand * this.secondOperand;
