@@ -83,27 +83,17 @@ select {
 }
 /*#endregion*/
 
-/*#region Attribution*/
-.attribution {
-  font-size: 0.6875rem;
-  margin-bottom: 0.5rem;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-/*#endregion*/
-
 :root {
+  --border-radius-calculator-keys: 0.3125rem;
+  --border-radius-calculator-screen: 0.625rem;
+  --border-radius-theme-controls-area: 0.8125rem;
   --font-family: 'Spartan', sans-serif;
-  --font-size-primary: 2rem;
   --font-size-calculator-screen: 2rem;
-  --font-size-theme-controls: 0.75rem;
-  --font-size-number-keys: 1.75rem;
   --font-size-control-keys: 1rem;
+  --font-size-number-keys: 1.75rem;
+  --font-size-primary: 2rem;
+  --font-size-theme-controls: 0.75rem;
+  --font-weight-bold: 700;
 }
 
 /* 768px */
@@ -120,6 +110,7 @@ select {
   --color-theme-controls-background: #242d44;
   --color-calculator-keypad-background: #242d44;
   --color-calculator-screen-background: #181f33;
+  --color-calculator-screen-text: #ffffff;
   --color-control-keys-background: #647198;
   --color-control-keys-shadow: #414e73;
   --color-theme-controls-switch: #d03f2f;
@@ -141,6 +132,7 @@ select {
   --color-theme-controls-background: #d2cdcd;
   --color-calculator-keypad-background: #d2cdcd;
   --color-calculator-screen-background: #eeeeee;
+  --color-calculator-screen-text: #36362C;
   --color-control-keys-background: #378187;
   --color-control-keys-shadow: #1b6066;
   --color-theme-controls-switch: #c85402;
@@ -162,6 +154,7 @@ select {
   --color-theme-controls-background: #1e0936;
   --color-calculator-keypad-background: #1e0936;
   --color-calculator-screen-background: #1e0936;
+  --color-calculator-screen-text: #ffe53d;
   --color-control-keys-background: #56077c;
   --color-control-keys-shadow: #be15f4;
   --color-theme-controls-switch: #00ded0;
@@ -177,3 +170,188 @@ select {
   --color-equal-key-background-hover: #93fff8;
   --color-number-key-background-hover: #6c34ac;
 }
+
+/*#region Attribution*/
+.attribution {
+  color: var(--color-calculator-screen-text);
+  font-size: 0.6875rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--color-theme-controls-switch);
+}
+/*#endregion*/
+
+body {
+  background-color: var(--color-theme-background);
+  font-family: var(--font-family);
+  font-size: var(--font-size-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.calculator__heading {
+  align-items: center;
+  color: var(--color-calculator-screen-text);
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator__title {
+  font-size: var(--font-size-primary);
+}
+
+.calculator__theme-switcher {
+  align-items: center;
+  display: flex;
+  font-size: var(--font-size-theme-controls);
+}
+
+.calculator__theme-switcher-label {
+  text-transform: uppercase;
+  font-size: var(--font-size-theme-controls);
+  margin-right: 1.3125rem;
+}
+
+.calculator__theme-controls-labels label:not(:last-child) {
+  margin-right: 0.6875rem;
+}
+
+.calculator__theme-controls-switch {
+  background-color: var(--color-theme-controls-background);
+  border-radius: var(--border-radius-theme-controls-area);
+  position: relative;
+  min-height: 1.625rem;
+}
+
+.calculator__screen {
+  background-color: var(--color-calculator-screen-background);
+  border-radius: var(--border-radius-calculator-screen);
+  color: var(--color-calculator-screen-text);
+  font-size: var(--font-size-calculator-screen);
+  letter-spacing: -0.0331rem;
+  margin-top: 2rem;
+  padding: 1.625rem 1.5rem;
+  text-align: right;
+}
+
+.calculator__keypad {
+  background-color: var(--color-calculator-keypad-background);
+  border-radius: var(--border-radius-calculator-screen);
+  display: grid;
+  gap: 0.8125rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+#button-reset,
+#button-equals {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 48em) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    width: 33.75rem;
+  }
+
+  .calculator__screen {
+    padding: 1.7812rem 2rem 1.7188rem;
+  }
+
+  .calculator__keypad {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+/*#region Button styles*/
+/* Reset button styles */
+.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Set custom styles */
+.button {
+  align-items: center;
+  align-self: start;
+  background-color: var(--color-number-key-background);
+  border-radius: var(--border-radius-calculator-keys);
+  box-shadow: inset 0 -0.25rem 0 0 var(--color-number-key-shadow);
+  color: var(--color-number-key-text);
+  display: inline-flex;
+  font-size: var(--font-size-number-keys);
+  justify-content: center;
+  letter-spacing: -0.0294rem;
+  min-height: 4rem;
+  padding: 0.625rem 0.625rem 0.25rem;
+  text-align: center;
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &.active {
+    background-color: var(--color-number-key-background-hover);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 0.25rem var(--color-number-key-shadow);
+  }
+
+  &.control {
+    background-color: var(--color-control-keys-background);
+    box-shadow: inset 0 -0.25rem 0 0 var(--color-control-keys-shadow);
+    color: var(--color-control-key-text);
+    font-size: var(--font-size-control-keys);
+
+    &:hover,
+    &.active {
+      background-color: var(--color-control-keys-background-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem var(--color-control-keys-shadow);
+    }
+  }
+
+  &.equal {
+    background-color: var(--color-equal-key-background);
+    box-shadow: inset 0 -0.25rem 0 0 var(--color-equal-key-shadow);
+    color: var(--color-equal-key-text);
+    font-size: var(--font-size-control-keys);
+
+    &:hover,
+    &.active {
+      background-color: var(--color-equal-key-background-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem var(--color-equal-key-shadow);
+    }
+  }
+}
+/*#endregion*/
