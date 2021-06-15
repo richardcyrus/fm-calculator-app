@@ -184,5 +184,28 @@
     },
   };
 
+  function themeSwitch() {
+    const switches = document.querySelectorAll('input[type="radio"]');
+    const body = document.querySelector("body");
+
+    const themes = ["theme-1", "theme-2", "theme-3"];
+    const currentTheme = body.classList;
+    document
+      .querySelector(`#${currentTheme}`)
+      .setAttribute("checked", "checked");
+
+    switches.forEach((item) =>
+      item.addEventListener("click", function (e) {
+        const theme = e.target.value;
+
+        item.setAttribute("checked", "checked");
+
+        body.classList.remove(...themes);
+        body.classList.add(theme);
+      })
+    );
+  }
+
   calculator.init();
+  themeSwitch();
 })();
