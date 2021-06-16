@@ -44,6 +44,7 @@
      */
     handleNumberInput: function (e) {
       let number = e.target.value;
+      // console.log(number);
 
       /**
        * If we've already completed a calculation (without a reset), the
@@ -54,27 +55,30 @@
       }
 
       /**
-       * Only allow one decimal. We check the displayed number since only
-       * one operand is shown at a time.
-       */
-      if (
-        number === "." &&
-        this.calculatorDisplay.innerText.indexOf(".") !== -1
-      ) {
-        return false;
-      }
-
-      /**
        * Update the correct stored number based on whether or not an operator
        * has been chosen.
        */
       if (isOperatorChosen) {
-        secondNumber += number;
-        this.updateDisplay(secondNumber);
+        if (number === "." && this.hasDecimal(secondNumber)) {
+          return false;
+        } else {
+          secondNumber += number;
+          // console.log(`secondNumber: ${secondNumber}`);
+          this.updateDisplay(secondNumber);
+        }
       } else {
-        firstNumber += number;
-        this.updateDisplay(firstNumber);
+        if (number === "." && this.hasDecimal(firstNumber)) {
+          return false;
+        } else {
+          firstNumber += number;
+          // console.log(`firstNumber: ${firstNumber}`);
+          this.updateDisplay(firstNumber);
+        }
       }
+    },
+
+    hasDecimal: function (value) {
+      return value.indexOf(".") !== -1 ? true : false;
     },
 
     /**
@@ -88,12 +92,13 @@
        * Do nothing if the firstNumber is missing or we've completed a
        * calculation.
        */
-      if (!firstNumber || isCalculated) {
+      if (!firstNumber || isCalculated || isOperatorChosen) {
         return false;
       }
 
       isOperatorChosen = true;
       operator = e.target.value;
+      // console.log(operator);
     },
 
     /**
@@ -192,31 +197,26 @@
     const switches = document.querySelectorAll('input[type="radio"]');
     const body = document.querySelector("body");
 
-    if(localStorage.getItem('theme')) {
-      const userThemePreference = localStorage.getItem('theme');
+    if (localStorage.getItem("theme")) {
+      const userThemePreference = localStorage.getItem("theme");
       document
         .querySelector(`#${userThemePreference}`)
         .setAttribute("checked", "checked");
-        body.classList.remove(...themes);
-        body.classList.add(userThemePreference);
-
+      body.classList.remove(...themes);
+      body.classList.add(userThemePreference);
     } else {
       // Check prefers-color-scheme for theme.
-      const light = window.matchMedia('(prefers-color-scheme: light)').matches;
-      const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const light = window.matchMedia("(prefers-color-scheme: light)").matches;
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-      if(light) {
-        document
-        .querySelector("#theme-2")
-        .setAttribute("checked", "checked");
+      if (light) {
+        document.querySelector("#theme-2").setAttribute("checked", "checked");
         body.classList.remove(...themes);
         body.classList.add("theme-2");
       }
 
-      if(dark) {
-        document
-        .querySelector("#theme-3")
-        .setAttribute("checked", "checked");
+      if (dark) {
+        document.querySelector("#theme-3").setAttribute("checked", "checked");
         body.classList.remove(...themes);
         body.classList.add("theme-3");
       }
@@ -239,7 +239,7 @@
 
         body.classList.remove(...themes);
         body.classList.add(theme);
-        localStorage.setItem('theme', theme);
+        localStorage.setItem("theme", theme);
       })
     );
   }
