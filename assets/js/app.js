@@ -126,7 +126,12 @@
           result = this.firstOperand * this.secondOperand;
           break;
         case "divide":
-          result = this.firstOperand / this.secondOperand;
+          if (this.firstOperand === 0 || this.secondOperand === 0) {
+            result = "Error";
+            return this.updateDisplay(result);
+          } else {
+            result = this.firstOperand / this.secondOperand;
+          }
           break;
       }
 
