@@ -70,6 +70,8 @@ Users should be able to:
 - [A Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [How to build a Calculator App with JavaScript](https://freshman.tech/calculator/): Updated calculator code to enable better functionality.
+- [JS calculator, respecting order of operations](https://codereview.stackexchange.com/questions/204859/js-calculator-respecting-order-of-operations): Adapted the calculator code from the previous link to honor order of operations using the code from this location.
 
 ## Author
 
