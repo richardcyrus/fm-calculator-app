@@ -52,7 +52,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/richardcyrus/fm-calculator-app)
+- [Solution URL](https://www.frontendmentor.io/solutions/calculator-app-vanilla-js-ETrWiNytn)
+- [Repository URL](https://github.com/richardcyrus/fm-calculator-app)
 - [Live Site URL](https://richardcyrus.github.io/fm-calculator-app)
 
 ## My process
@@ -76,4 +77,4 @@ Users should be able to:
 ## Author
 
 - Website - [www.richardcyrus.com](https://www.richardcyrus.com)
-- Frontend Mentor - [@richarcyrus](https://www.frontendmentor.io/profile/richarcyrus)
+- Frontend Mentor - [@richardcyrus](https://www.frontendmentor.io/profile/richardcyrus)
